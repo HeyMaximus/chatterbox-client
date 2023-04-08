@@ -12,10 +12,18 @@ var MessagesView = {
 
   render: function() {
     // TODO: Render _all_ the messages.
+    console.log('invoking MessagesView.render with', Messages._data);
+    for (var i = 0; i < Messages._data.length; i++) {
+      MessagesView.renderMessage(Messages._data[i]);
+    }
   },
 
   renderMessage: function(message) {
-    // TODO: Render a single message.
+    console.log('invoking renderMessage with', message);
+    var strToAdd = MessageView.render(message);
+    console.log(strToAdd);
+    MessagesView.$chats.append(strToAdd);
+    //use $chat to append
   },
 
   handleClick: function(event) {

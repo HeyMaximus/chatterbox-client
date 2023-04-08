@@ -25,8 +25,12 @@ var App = {
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
+      //Parse.readAll === returns a package of data
+      Messages._data = data;
+      MessagesView.render();
       // examine the response from the server request:
       console.log(data);
+      //store the data somewhere/somehow where it can be accessed by all controllers.
 
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
@@ -42,4 +46,5 @@ var App = {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
   }
+
 };
