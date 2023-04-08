@@ -18,18 +18,27 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    // App.stopSpinner();
 
     // TODO: Make sure the app loads data from the API
+    RoomsView.$button.on('click', RoomsView.handleClick);
+    // $('.submit').on('click', FormView.handleClick);
     // continually, instead of just once at the start.
+
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       //Parse.readAll === returns a package of data
+      console.log(data);
       Messages._data = data;
       MessagesView.render();
+
+      Rooms._data = data;
+      RoomsView.render();
+      callback();
       // examine the response from the server request:
-      console.log(data);
+
       //store the data somewhere/somehow where it can be accessed by all controllers.
 
       // TODO: Use the data to update Messages and Rooms

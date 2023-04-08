@@ -10,22 +10,22 @@ var Rooms = {
 
   roomList: [],
 
-  updateList: function(data = this._data, array = this.roomList) {
-    for (var i = 0; i < data.length; i++) {
-      var roomName = data[i]['roomname'];
-      if (array.indexOf(roomName) === -1) {
-        array.push(roomName);
-      }
-    }
-  },
+  // updateList: function(data = this._data, array = this.roomList) {
+  //   for (var i = 0; i < data.length; i++) {
+  //     var roomName = data[i]['roomname'];
+  //     if (array.indexOf(roomName) === -1) {
+  //       array.push(roomName);
+  //     }
+  //   }
+  // },
 
-  sort: function(array) {
-    return array.sort();
-  },
+  // sort: function(array) {
+  //   return array.sort();
+  // },
 
-  selectedRoom: function(___) {
+  // selectedRoom: function(___) {
 
-  }
+  // }
 
 
   // TODO: Define methods which allow you to add rooms, update the list,
